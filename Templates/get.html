@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redis Key-Value Store</title>
+</head>
+<body>
+    <h1>Redis Key-Value Store</h1>
+    
+    <h2>Set Key-Value Pair:</h2>
+    <form method="POST" action="/set">
+        Key: <input type="text" name="key">
+        Value: <input type="text" name="value">
+        <input type="submit" value="Set">
+    </form>
+
+    <h2>Retrieve Value by Key:</h2>
+    <form method="POST" action="/get">
+        Key: <input type="text" name="key">
+        <input type="submit" value="Get">
+    </form>
+
+    {% if key %}
+    <p>Key: {{ key }}</p>
+    <p>Value: {{ value }}</p>
+    {% endif %}
+</body>
+</html>

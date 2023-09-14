@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redis Web App</title>
+</head>
+<body>
+    <h1>Redis Web App</h1>
+    
+    <form action="/store_data" method="POST">
+        Key: <input type="text" name="key"><br>
+        Value: <input type="text" name="value"><br>
+        <input type="submit" value="Store Data">
+    </form>
+
+    <hr>
+
+    <h1>Retrieve Data from Redis</h1>
+    <form method="get" action="/get_data/{{ key }}">
+        <label for="key">Enter Key:</label>
+        <input type="text" id="key" name="key" value="{{ key }}" >
+        <button type="submit">Get Value</button>
+    </form>
+    <p>{{ value }}</p>
+
+    
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>

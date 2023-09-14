@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 import redis
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ def set_key():
     value = request.form['value']
     # Store the key-value pair in Redis
     redis_client.set(key, value)
-    return redirect(url_for('index'))
+    return 'Data Strored Successfully!'
 
 @app.route('/get', methods=['POST'])
 def get_key():

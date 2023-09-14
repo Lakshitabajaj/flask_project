@@ -27,7 +27,7 @@ def get_key():
     else:
         value = "Key not found in Redis."
 
-    return render_template('index.html', key=key, value=value)
+    return render_template('get.html', key=key, value=value)
  
 if __name__ == '__main__':
     app.run(debug=True)
